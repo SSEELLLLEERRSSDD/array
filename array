@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication48
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var people = new string[] { "Tom", "Sam", "Bob", "Kate", "Tom", "Alice" };
+                      Array.Sort(people);
+                      foreach (var person in people) Console.WriteLine(person);   
+                      Array.Reverse(people);
+            Array.Resize(ref people, 6);           
+            int bobIndex = Array.BinarySearch(people, "Bob");           
+            int tomFirstIndex = Array.IndexOf(people, "Tom");            
+            int tomLastIndex = Array.LastIndexOf(people, "Tom");            
+            int lengthFirstIndex = Array.FindIndex(people, person => person.Length > 3);
+            int lengthLastIndex = Array.FindLastIndex(people, person => person.Length > 3);
+        foreach (var person in people) 
+        Console.WriteLine(person);
+            Console.WriteLine(bobIndex);
+            string[] group = Array.FindAll(people, person => person.Length == 3);
+            foreach (var person in group) Console.WriteLine(person);   
+Console.WriteLine(tomFirstIndex);       
+Console.WriteLine(tomLastIndex);         
+Console.WriteLine(lengthFirstIndex); 
+Console.WriteLine(lengthLastIndex);
+Array.Clear(people,1,1);
+        Console.ReadLine();
+        }
+    }
+}
